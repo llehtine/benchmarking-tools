@@ -4,8 +4,11 @@
 use strict;
 use warnings;
 
-open(F,"test_def.csv") or
-        die "Unable to open test_def.csv";
+my $def_file = shift or die
+        "Usage: $0 FILENAME\n";
+
+open(F,$def_file) or
+        die "Unable to open $def_file";
 
 open(T,">results.csv") or
         die "Unable to open results.csv";
